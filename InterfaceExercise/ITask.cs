@@ -1,6 +1,6 @@
 ﻿namespace InterfaceExercise
 {
-    public interface ITaskExecution
+    public interface ITask
     {
         void Execute();
     }

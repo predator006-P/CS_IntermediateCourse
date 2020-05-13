@@ -5,15 +5,9 @@ namespace InterfaceExercise
 {
     public class WorkFlowEngine
     {
-        private readonly List<ITaskExecution> _taskExecutionList;
-
-        public WorkFlowEngine(List<ITaskExecution> taskExecutionList)
+        public void Run(IWorkFlow workFlow)
         {
-            _taskExecutionList = taskExecutionList;
-        }
-        public void Run()
-        {
-            foreach (var task in _taskExecutionList)
+            foreach (var task in workFlow.GetTasks())
             {
                 task.Execute();
             }

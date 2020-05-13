@@ -2,7 +2,7 @@
 
 namespace InterfaceExercise
 {
-    public class Unpack : ITaskExecution
+    public class Unpack : ITask
     {
         public void Execute()
         {

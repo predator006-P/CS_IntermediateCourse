@@ -2,7 +2,7 @@
 
 namespace InterfaceExercise
 {
-    public class Install : ITaskExecution
+    public class Install : ITask
     {
         public void Execute()
         {

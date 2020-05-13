@@ -2,17 +2,18 @@
 
 namespace InterfaceExercise
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
-            List<ITaskExecution> taskList = new List<ITaskExecution>();
-            taskList.Add(new Download());
-            taskList.Add(new Unpack());
-            taskList.Add(new Install());
+            var workflow = new WorkFlow();
+            workflow.Add(new Download());
+            workflow.Add(new Unpack());
+            workflow.Add(new Install());
+            workflow.Add(new Restart());
 
-            var workFlowEngine = new WorkFlowEngine(taskList);
-            workFlowEngine.Run();
+            var workFlowEngine = new WorkFlowEngine();
+            workFlowEngine.Run(workflow);
         }
     }
 }

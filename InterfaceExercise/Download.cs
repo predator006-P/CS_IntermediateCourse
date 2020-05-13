@@ -2,7 +2,7 @@
 
 namespace InterfaceExercise
 {
-    public class Download : ITaskExecution
+    public class Download : ITask
     {
         public void Execute()
         {
