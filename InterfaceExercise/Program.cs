@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace InterfaceExercise
 {
@@ -6,7 +6,13 @@ namespace InterfaceExercise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<ITaskExecution> taskList = new List<ITaskExecution>();
+            taskList.Add(new Download());
+            taskList.Add(new Unpack());
+            taskList.Add(new Install());
+
+            var workFlowEngine = new WorkFlowEngine(taskList);
+            workFlowEngine.Run();
         }
     }
 }
